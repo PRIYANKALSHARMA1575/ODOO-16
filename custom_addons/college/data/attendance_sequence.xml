@@ -1,0 +1,8 @@
+<odoo>
+    <record id="seq_college_attendance" model="ir.sequence">
+        <field name="name">Attendance Sequence</field>
+        <field name="code">college.attendance</field>
+        <field name="prefix">ATT</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

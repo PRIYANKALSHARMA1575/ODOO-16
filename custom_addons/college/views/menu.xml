@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_college_root"
+              name="College"
+              sequence="10"/>
+
+    <menuitem id="menu_college_admissions"
+              name="Admissions"
+              parent ="menu_college_root"
+              sequence="10"/>
+
+    <menuitem id="menu_college_StaffData"
+              name="Staff Data"
+              parent="menu_college_root"
+              sequence="10"/>
+
+    <menuitem id="menu_college_department"
+              name="Departments"
+              parent="menu_college_root"
+              sequence="10"/>
+    <menuitem id="menu_college_classroom"
+              name="Class"
+              parent="menu_college_department"
+              sequence="10"/>
+    <menuitem id="menu_college_attendance"
+              name="Attendance"
+              parent="menu_college_classroom"
+              sequence="10"/>
+    <menuitem id="menu_college_subject"
+          name="Subjects"
+          parent="menu_college_classroom"
+          sequence="30"/>
+
+<menuitem id="menu_college_timetable"
+          name="Timetable"
+          parent="menu_college_classroom"
+          sequence="40"/>
+
+
+
+</odoo>

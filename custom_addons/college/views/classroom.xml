@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_college_classroom_form" model="ir.ui.view">
+        <field name="name">college.classroom.form</field>
+        <field name="model">college.classroom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="department_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Attendance">
+                            <field name="attendance_ids">
+                                <tree>
+                                    <field name="student_id"/>  <!-- Ensure this field exists in the attendance model -->
+                                    <field name="date"/>        <!-- Ensure this field exists in the attendance model -->
+                                    <field name="present"/>     <!-- Ensure this field exists in the attendance model -->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_college_classroom_tree" model="ir.ui.view">
+        <field name="name">college.classroom.tree</field>
+        <field name="model">college.classroom</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="department_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_college_classroom" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">college.classroom</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_college_classroom"
+              name="Classes"
+              action="action_college_classroom"
+              parent="menu_college_department"
+              sequence="20"/>
+</odoo>

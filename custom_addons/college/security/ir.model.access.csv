@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_college_student,college.student,model_college_student,base.group_user,1,1,1,1
+access_college_teacher,college.teacher,model_college_teacher,base.group_user,1,1,1,1
+access_college_attendance,access_college_attendance,model_college_attendance,base.group_user,1,1,1,1
+access_college_department,access_college_department,model_college_department,base.group_user,1,1,1,1
+access_college_classroom,access_college_classroom,model_college_classroom,base.group_user,1,1,1,1
+access_college_subject,access_college_subject,model_college_subject,base.group_user,1,1,1,1
+access_college_timetable,access_college_timetable,model_college_timetable,base.group_user,1,1,1,1

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_college_subject_form" model="ir.ui.view">
+        <field name="name">college.subject.form</field>
+        <field name="model">college.subject</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="teacher_id"/>
+                        <field name="classroom_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_college_subject_tree" model="ir.ui.view">
+        <field name="name">college.subject.tree</field>
+        <field name="model">college.subject</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="teacher_id"/>
+                <field name="classroom_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_college_subject" model="ir.actions.act_window">
+    <field name="name">Subjects</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">college.subject</field>
+    <field name="view_mode">tree,form</field>
+</record>
+ <menuitem id="menu_college_subject"
+              name="Subject"
+              parent="menu_college_classroom"
+              action="action_college_subject"
+              sequence="10"/>
+</odoo>

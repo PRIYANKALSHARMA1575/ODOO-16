@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_college_attendance_form" model="ir.ui.view">
+        <field name="name">college.attendance.form</field>
+        <field name="model">college.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="student_id"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="date"/>
+                        <field name="status"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_college_attendance_tree" model="ir.ui.view">
+        <field name="name">college.attendance.tree</field>
+        <field name="model">college.attendance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_id"/>
+                <field name="date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_college_attendance" model="ir.actions.act_window">
+        <field name="name">Attendance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">college.attendance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="view_college_attendance_search" model="ir.ui.view">
+        <field name="name">college.attendance.search</field>
+        <field name="model">college.attendance</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="student_id"/>
+                <field name="date" />
+                <filter string="Present" name="filter_present" domain="[('present', '=', True)]"/>
+                <filter string="Absent" name="filter_absent" domain="[('present', '=', False)]"/>
+                <filter string="And" name="filter_and" domain="[]" context="{'group_by': 'student_id'}"/>
+                <filter string="Or" name="filter_or" domain="[]" context="{'group_by': 'date'}"/>
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="menu_college_attendance"
+              name="Attendance"
+              parent="menu_college_classroom"
+              action="action_college_attendance"
+              sequence="20"/>
+</odoo>
